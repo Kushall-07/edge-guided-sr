@@ -1,0 +1,25 @@
+data:
+  thermal_dir: src/data/thermal_lr
+  optical_dir: src/data/optical_hr
+  tile_size: 48
+  stride: 32
+  train_split: 1.0
+  num_workers: 0
+
+train:
+  epochs: 10
+  batch_size: 4
+  lr: 1.0e-4
+  weight_decay: 0.0
+  ckpt_dir: outputs/checkpoints
+
+model:
+  name: EdgeGuidedSR
+  in_ch_thermal: 1
+  in_ch_optical: 3
+  base_ch: 32
+  scale: 3
+
+loss:
+  w_l1: 1.0
+  w_edge: 0.2
